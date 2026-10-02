@@ -93,6 +93,16 @@ a:hover { text-decoration: underline; }
 
 .portrait-column { text-align: center; }
 
+.portrait-photo {
+  display: block;
+  width: 230px;
+  height: 280px;
+  margin: 0 auto;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 4px;
+}
+
 .portrait-placeholder {
   width: 230px;
   height: 280px;
@@ -345,6 +355,11 @@ code {
   }
 
   .portrait-column { text-align: left; }
+  .portrait-photo {
+  margin-left: 0;
+  width: 190px;
+  height: 230px;
+ }
   .portrait-placeholder { margin-left: 0; width: 190px; height: 230px; }
   .photo-note { max-width: 190px; text-align: center; }
 
