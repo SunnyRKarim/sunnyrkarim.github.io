@@ -95,8 +95,8 @@ a:hover { text-decoration: underline; }
 
 .portrait-photo {
   display: block;
-  width: 125px;
-  height: 165px;
+  width: 130px;
+  height: 171px;
   margin: 0;
   object-fit: cover;
   object-position: center top;
