@@ -5,63 +5,407 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Research by Sunny Karim in econometrics, causal inference, and policy evaluation.">
   <title>Research | Sunny Karim</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+
+  <link rel="stylesheet" href="assets/css/style.css?v=3">
+
+  <style>
+    .research-page-heading {
+      margin-bottom: 2.25rem;
+    }
+
+    .research-page-heading h1 {
+      margin-bottom: 0;
+    }
+
+    .research-section {
+      margin-top: 2.6rem;
+    }
+
+    .research-section:first-of-type {
+      margin-top: 0;
+    }
+
+    .research-section-title {
+      margin: 0 0 1.15rem 0;
+      padding-bottom: 0.45rem;
+      border-bottom: 1px solid #d8d8d8;
+      font-size: 1.15rem;
+      font-weight: 600;
+    }
+
+    .research-entry {
+      margin-bottom: 1.45rem;
+    }
+
+    .research-entry:last-child {
+      margin-bottom: 0;
+    }
+
+    .research-entry h2 {
+      margin: 0 0 0.35rem 0;
+      font-size: 1.16rem;
+      line-height: 1.4;
+      font-weight: 600;
+    }
+
+    .research-entry p {
+      margin: 0.22rem 0;
+      line-height: 1.55;
+    }
+
+    .research-entry .citation {
+      color: #444;
+    }
+
+    .research-entry .paper-link {
+      display: inline-block;
+      margin-top: 0.25rem;
+      font-weight: 500;
+    }
+
+    .job-market-paper {
+      margin-bottom: 2.7rem;
+    }
+
+    .job-market-paper .paper-label {
+      margin-bottom: 0.5rem;
+      font-size: 0.83rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .job-market-paper h2 {
+      margin: 0 0 0.55rem 0;
+      font-size: 1.55rem;
+      line-height: 1.35;
+      font-weight: 600;
+    }
+
+    .job-market-paper .citation {
+      margin-bottom: 0.3rem;
+      color: #444;
+    }
+
+    @media (max-width: 760px) {
+      .job-market-paper h2 {
+        font-size: 1.35rem;
+      }
+
+      .research-entry h2 {
+        font-size: 1.08rem;
+      }
+    }
+  </style>
 </head>
+
 <body>
+
   <header class="site-header">
     <div class="container nav-wrap">
-      <a class="site-title" href="index.html">Sunny Karim</a>
+
+      <a class="site-title" href="index.html">
+        Sunny Karim
+      </a>
+
       <nav class="site-nav" aria-label="Main navigation">
         <a href="index.html">Home</a>
         <a class="active" href="research.html">Research</a>
         <a href="teaching.html">Teaching</a>
         <a href="cv.html">CV</a>
       </nav>
+
     </div>
   </header>
 
   <main class="container page-content">
-    <div class="page-heading">
-      <p class="eyebrow">Econometrics and Applied Microeconomics</p>
+
+    <div class="research-page-heading">
       <h1>Research</h1>
-      <p>My research develops and applies methods for credible policy evaluation, with a particular focus on difference-in-differences designs.</p>
     </div>
 
-    <section class="research-list">
-      <article class="paper-card">
-        <p class="paper-label">Job Market Paper</p>
-        <h2>Testing the Common Causality of Covariates in Difference-in-Differences: Evidence from Ban-the-Box Policies</h2>
-        <p>Methodological and empirical work on covariate-effect heterogeneity in difference-in-differences, with an application to private-sector Ban-the-Box policies.</p>
-        <p class="paper-links"><a href="#">Paper link</a> <span>·</span> <a href="#">Slides</a></p>
-      </article>
 
-      <article class="paper-card">
-        <h2>Difference-in-Differences with Unpoolable Data</h2>
-        <p>Methods for difference-in-differences settings in which unit-level data cannot be pooled across jurisdictions or data silos.</p>
-        <p class="paper-links"><a href="#">Paper link</a> <span>·</span> <a href="#">Code</a></p>
-      </article>
+    <!-- =====================================================
+         JOB MARKET PAPER
+         ===================================================== -->
 
-      <article class="paper-card">
-        <h2>Intersection Difference-in-Differences</h2>
-        <p>Difference-in-differences estimation with flexible covariate relationships across regions and periods.</p>
-        <p class="paper-links"><a href="#">Paper link</a> <span>·</span> <a href="#">Code</a></p>
-      </article>
+    <section class="job-market-paper">
 
-      <article class="paper-card">
-        <h2>Improved Inference for CSDID Using the Cluster Jackknife</h2>
-        <p>Joint work on cluster-jackknife inference for modern difference-in-differences estimators.</p>
-        <p class="paper-links"><a href="#">Paper link</a> <span>·</span> <a href="#">Software</a></p>
-      </article>
+      <p class="paper-label">
+        Job Market Paper
+      </p>
+
+      <h2>
+        Testing common causality of covariates:
+        Evidence from private-sector ban-the-box policies
+      </h2>
+
+      <p class="citation">
+        <strong>Karim, S. R.</strong> (2026).
+      </p>
+
+      <a
+        class="paper-link"
+        href="https://github.com/SunnyRKarim/Job-Market-Paper/blob/main/JMP%20v1.pdf"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Paper
+      </a>
+
     </section>
 
-    <p class="edit-note">The paper descriptions and links are deliberately easy to edit in <code>research.html</code>.</p>
+
+    <!-- =====================================================
+         PAPERS UNDER REVIEW
+         ===================================================== -->
+
+    <section class="research-section">
+
+      <h2 class="research-section-title">
+        Papers Under Review
+      </h2>
+
+
+      <article class="research-entry">
+
+        <h2>
+          Which policy works, and where?
+          Estimation and inference for state-level treatment effects
+          in difference-in-differences
+        </h2>
+
+        <p class="citation">
+          Austin, N.,
+          <strong>Karim, S. R.</strong>,
+          Strumpf, E.,
+          &amp; Webb, M. D. (2026).
+          <em>Preprint.</em>
+        </p>
+
+        <a
+          class="paper-link"
+          href="https://arxiv.org/abs/2609.01467"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Paper
+        </a>
+
+      </article>
+
+
+      <article class="research-entry">
+
+        <h2>
+          Fewer homes, similar neighborhoods:
+          Revisiting the evidence for racial housing discrimination
+          in “Sorting and Steering.”
+        </h2>
+
+        <p class="citation">
+          Chen, S.,
+          Gangji, A.,
+          <strong>Karim, S. R.</strong>,
+          McCanny, A.,
+          &amp; Webb, M. D. (2026).
+          Revise and resubmit,
+          <em>Journal of Political Economy</em>,
+          second round.
+        </p>
+
+        <p class="citation">
+          Previously circulated as:
+          “Many Misspellings of Albuquerque”.
+        </p>
+
+        <a
+          class="paper-link"
+          href="https://github.com/SunnyRKarim/HUD-paper"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Paper
+        </a>
+
+      </article>
+
+
+      <article class="research-entry">
+
+        <h2>
+          Difference-in-differences with unpoolable data
+        </h2>
+
+        <p class="citation">
+          <strong>Karim, S. R.</strong>,
+          Webb, M. D.,
+          Austin, N.,
+          &amp; Strumpf, E. (2024).
+          <em>Preprint.</em>
+        </p>
+
+        <a
+          class="paper-link"
+          href="https://arxiv.org/abs/2403.15910"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Paper
+        </a>
+
+      </article>
+
+    </section>
+
+
+    <!-- =====================================================
+         WORKING PAPERS
+         ===================================================== -->
+
+    <section class="research-section">
+
+      <h2 class="research-section-title">
+        Working Papers
+      </h2>
+
+
+      <article class="research-entry">
+
+        <h2>
+          Improved inference for CSDID using the cluster jackknife
+        </h2>
+
+        <p class="citation">
+          <strong>Karim, S. R.</strong>,
+          Nielsen, M. Ø.,
+          MacKinnon, J. G.,
+          &amp; Webb, M. D. (2026).
+          <em>Preprint.</em>
+        </p>
+
+        <a
+          class="paper-link"
+          href="https://arxiv.org/abs/2602.12043"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Paper
+        </a>
+
+      </article>
+
+
+      <article class="research-entry">
+
+        <h2>
+          Good controls gone bad:
+          Difference-in-differences with covariates
+        </h2>
+
+        <p class="citation">
+          <strong>Karim, S. R.</strong>,
+          &amp; Webb, M. D. (2024).
+          <em>Preprint.</em>
+        </p>
+
+        <a
+          class="paper-link"
+          href="https://arxiv.org/abs/2412.14447"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Paper
+        </a>
+
+      </article>
+
+    </section>
+
+
+    <!-- =====================================================
+         PUBLICATIONS
+         ===================================================== -->
+
+    <section class="research-section">
+
+      <h2 class="research-section-title">
+        Publications (Pre-doctoral)
+      </h2>
+
+
+      <article class="research-entry">
+
+        <h2>
+          Financial innovations and its impact on money demand in Bangladesh:
+          An error correction model (ECM) approach
+        </h2>
+
+        <p class="citation">
+          Chowdhury, M. I.,
+          &amp; <strong>Karim, S. R.</strong> (2020).
+          <em>International Review of Business Research Papers</em>,
+          16(1), 34–54.
+        </p>
+
+        <a
+          class="paper-link"
+          href="https://zantworldpress.com/wp-content/uploads/2020/03/3.-Moinul.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Paper
+        </a>
+
+      </article>
+
+
+      <article class="research-entry">
+
+        <h2>
+          Disaster risk and impact of urbanization of megacities in Bangladesh:
+          Evidence from Dhaka and Chittagong
+        </h2>
+
+        <p class="citation">
+          Haque, S.,
+          Amin, S. B.,
+          &amp; <strong>Karim, S. R.</strong> (2018).
+          <em>Journal of Accounting, Finance and Economics</em>,
+          8(3), 35–57.
+        </p>
+
+        <a
+          class="paper-link"
+          href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=TlPJIF4AAAAJ&citation_for_view=TlPJIF4AAAAJ:Y0pCki6q_DkC"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Paper
+        </a>
+
+      </article>
+
+    </section>
+
   </main>
 
+
   <footer class="site-footer">
+
     <div class="container footer-inner">
-      <span>Sunny Karim</span>
-      <span>Department of Economics, Carleton University</span>
+
+      <span>
+        Sunny Karim
+      </span>
+
+      <span>
+        Department of Economics, Carleton University
+      </span>
+
     </div>
+
   </footer>
+
 </body>
 </html>
