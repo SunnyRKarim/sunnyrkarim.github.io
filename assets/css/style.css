@@ -374,3 +374,16 @@ code {
     gap: 2px;
   }
 }
+
+.portrait-photo {
+  width: 145px !important;
+  height: 190px !important;
+  max-width: none !important;
+  margin: 0 !important;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.portrait-column {
+  text-align: left !important;
+}
