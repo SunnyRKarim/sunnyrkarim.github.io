@@ -1,0 +1,48 @@
+name: Publish journal status academic CV
+on:
+  push:
+    paths:
+      - '.github/workflows/publish-cv-journal-status.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  publish-cv:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Compile academic CV
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: main.tex
+          working_directory: .cv-build
+      - name: Verify journal statuses
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s .cv-build/main.pdf
+          python -m pip install --quiet pypdf
+          python - <<'PY'
+          import re
+          from pypdf import PdfReader
+          r=PdfReader(".cv-build/main.pdf")
+          s=re.sub(r'\s+', ' ', ' '.join(p.extract_text() or '' for p in r.pages))
+          for term in ["Econometric Reviews", "Journal of Political Economy", "Third round reviews", "November 13, 2026"]:
+              assert term in s, "Missing PDF text: "+term
+          print("Academic CV compiled and verified:",len(r.pages),"pages")
+          PY
+      - name: Replace website PDF
+        shell: bash
+        run: |
+          set -euo pipefail
+          cp .cv-build/main.pdf assets/cv/Academic-CV-Sunny.pdf
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- assets/cv/Academic-CV-Sunny.pdf
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish academic CV with journal review statuses"
+            git push origin HEAD:main
+          fi
