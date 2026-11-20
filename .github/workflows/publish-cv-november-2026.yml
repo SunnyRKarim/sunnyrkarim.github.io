@@ -1,0 +1,49 @@
+name: Publish defended PhD academic CV
+on:
+  push:
+    paths:
+      - '.github/workflows/publish-cv-november-2026.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  publish-cv:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Compile current academic CV
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: main.tex
+          working_directory: .cv-build
+      - name: Check rebuilt CV for updated facts
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s .cv-build/main.pdf
+          python -m pip install --quiet pypdf
+          python - <<'PY'
+          import re
+          from pypdf import PdfReader
+          r = PdfReader(".cv-build/main.pdf")
+          text = re.sub(r'\s+', ' ', ' '.join(p.extract_text() or '' for p in r.pages))
+          for term in ["Sunny Rabiul Karim", "November 13, 2026", "degree conferral pending", "Revise and resubmit", "2026 Canadian Stata Conference"]:
+              assert term in text, "Missing updated CV text: " + term
+          assert "Upcoming" not in text, "Obsolete Stata conference status still appears"
+          print("Verified revised CV:", len(r.pages), "pages")
+          PY
+      - name: Replace website academic CV PDF
+        shell: bash
+        run: |
+          set -euo pipefail
+          cp .cv-build/main.pdf assets/cv/Academic-CV-Sunny.pdf
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- assets/cv/Academic-CV-Sunny.pdf
+          if ! git diff --cached --quiet; then
+            git commit -m "Publish November 2026 defended-PhD academic CV"
+            git push origin HEAD:main
+          fi
